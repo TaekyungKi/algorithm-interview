@@ -7,16 +7,20 @@
 N, K = list(map(int, input().split()))
 
 count = 0
-while True:
-    if N % 4 == 0:
-        N /= 4
-    
-    else: 
-        N -= 1
-
+if K == 1:
+  while True:
+    N -= 1
     count += 1
-    
     if N == 1:
-        break
+      break
+else:
+  while True:
+      if N % K == 0:
+          N /= K
+      else: 
+          N -= 1
+      count += 1
 
+      if N == 1:
+          break
 print(count)
